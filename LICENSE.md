@@ -1,0 +1,1 @@
+Copyright © by the Society of Motion Picture and Television Engineers. All rights reserved. No part of this material may be reproduced, by any means whatsoever, without the prior written permission of the Society of Motion Picture and Television Engineers.
