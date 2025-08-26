@@ -19,7 +19,7 @@ To view the document, please download the ZIP file, extract the files, and open 
 Computing and compositing systems must often render multiple sources of content—such as text, images, and video—that can include both standard dynamic range (SDR) and high dynamic range (HDR), on the same display at the same time. In ST 2094-50, we describe a system in which modern operating systems and image compositors display content sources together in a common relative linear color space. This space is anchored around an HDR Reference White level, which is explicitly defined and identified within embedded metadata.<br><br>
 An HDR Headroom Range begins above the HDR Reference White. By defining the essential image ranges and using parameterized tone mapping curves in ST 2094-50, we provide several key optimizations:
 <ul>
-<li>Excellent visual matching between different image formats that require compositing</li>
+<li>Excellent visual matching between different image formats that require compositing.</li>
 <li>Adaptive tone mapping, where focal content does not become noticeably darker even when the content includes a greater luminance range than the target display.</li>
 <li>Provides subjective metadata points along the tone curve defined by the content creator, preserving creative intent.</li>
 </ul>
