@@ -1,9 +1,5 @@
 # SMPTE _ST 2094-50_ - _Dynamic Metadata for Color Volume Transform - Application #5 (Broadcast)_
 
-_This repository is *public*._
-
-Please consult [CONTRIBUTING.md](./CONTRIBUTING.md), [CONFIDENTIALITY.md](./CONFIDENTIALITY.md), [LICENSE.md](./LICENSE.md) and [PATENTS.md](./PATENTS.md) for important notices.
-
 ## General
 This repository tracks ST 2094-50 - Dynamic Metadata for Color Volume Transform - Application #5 (Broadcast)
 
@@ -35,7 +31,7 @@ A Public Committee Draft (Public CD) of SMPTE ST 2094-50 is available for review
 
 ## Reporting issues
 
-Please report issues at <https://github.com/SMPTE/st2094-50/issues> or at 10E Chairs <10e-chair@smpte.org>.
+Please report issues at <https://github.com/SMPTE/st2094-50/issues> or to 10E Chairs <10e-chair@smpte.org>.
 
 ## Contributing
 
