@@ -8,13 +8,11 @@ _This repository is *public*._
 Please consult [CONTRIBUTING.md](./CONTRIBUTING.md), [CONFIDENTIALITY.md](./CONFIDENTIALITY.md), [LICENSE.md](./LICENSE.md) and
 [PATENTS.md](./PATENTS.md) for important notices.
 
-Your feedback is welcome at https://github.com/SMPTE/st2059-2/issues.
+Your feedback is welcome at https://github.com/SMPTE/st2094-50/issues.
 
 ## Public Committee Draft (PCD) Notice
-
-The following element is made available for a public review period ending no earlier than September 1, 2025, and no later than September 23, 2025:
-
-[SMPTE PCD ST 2094-50](./32NF-PCD-ST-2094-50.pdf)
+The Public Committee Draft (PCD) of ST 2094-50 is made available in xxx.zip (available above) for a review period ending no earlier than 2025-09-01, and no later than 2025-09-23.<br><br>
+To view the document, please download the ZIP file, extract the files, and open the HTML file in your browser.
 
 ## Details
 
@@ -27,7 +25,7 @@ An HDR Headroom Range begins above the HDR Reference White. By defining the esse
 </ul>
 The functionality of these methods is based on several years of real-world broadcast production, where predefined (static) conversion methods use similar concepts, such as a reference white anchor and compressed HDR highlights. ST 2094-50 advances these ideas by defining a mathematically adaptive system.<br><br>
 The basic principles of the static method are described in ITU-R BT.2408-8, Sections 7 and Annex 10. Monitoring practices described in ITU-R BT.2166 similarly anchor side-by-side HDR and SDR monitors around common reference white levels to avoid eye adaptation issues. This practice aligns closely with the compositing approach in ST 2094-50, which also centers on a common “reference white” luminance level.<br><br>
-A Public Committee Draft (Public CD) of SMPTE ST 2094-50 is available for review on GitHub: https://github.com/SMPTE/st2094-50. Implementers are encouraged to review the system and provide feedback as soon as possible but no later than September 23rd via GitHub to help improve the document and enhance interoperability across implementations.
+Implementers are encouraged to review the system and provide feedback as soon as possible but no later than September 23, 2025, via GitHub to help improve the document and enhance interoperability across implementations.
 
 ## Reporting issues
 
