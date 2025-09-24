@@ -11,7 +11,7 @@ Please consult [CONTRIBUTING.md](./CONTRIBUTING.md), [CONFIDENTIALITY.md](./CONF
 Your feedback is welcome at https://github.com/SMPTE/st2094-50/issues.
 
 ## Public Committee Draft (PCD) Notice
-The Public Committee Draft (PCD) of ST 2094-50 is made available in xxx.zip (available above) for a review period ending no earlier than 2025-09-01, and no later than 2025-09-23.<br><br>
+The Public Committee Draft (PCD) of ST 2094-50 is made available in 10e-st-2094-50-cd-2025-08-26-draft.zip for a review period ending no earlier than 2025-09-01, and no later than 2025-09-23.<br><br>
 To view the document, please download the [ZIP file](./10e-st-2094-50-cd-2025-08-26-draft.zip), extract the files, and open the HTML file in your browser.
 
 ## Details
