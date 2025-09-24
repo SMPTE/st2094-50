@@ -11,7 +11,7 @@ Please consult [CONTRIBUTING.md](./CONTRIBUTING.md), [CONFIDENTIALITY.md](./CONF
 Your feedback is welcome at https://github.com/SMPTE/st2094-50/issues.
 
 ## Public Committee Draft (PCD) Notice
-The Public Committee Draft (PCD) of ST 2094-50 is made available in 10e-st-2094-50-cd-2025-08-26-draft.zip for a review period ending no earlier than 2025-09-01, and no later than 2025-09-23.<br><br>
+The Public Committee Draft (PCD) of ST 2094-50 is made available in 10e-st-2094-50-cd-2025-08-26-draft.zip for a review period ending no later than 2025-10-17.<br><br>
 To view the document, please download the [ZIP file](./10e-st-2094-50-cd-2025-08-26-draft.zip), extract the files, and open the HTML file in your browser.
 
 ## Details
@@ -25,7 +25,7 @@ An HDR Headroom Range begins above the HDR Reference White. By defining the esse
 </ul>
 The functionality of these methods is based on several years of real-world broadcast production, where predefined (static) conversion methods use similar concepts, such as a reference white anchor and compressed HDR highlights. ST 2094-50 advances these ideas by defining a mathematically adaptive system.<br><br>
 The basic principles of the static method are described in ITU-R BT.2408-8, Sections 7 and Annex 10. Monitoring practices described in ITU-R BT.2166 similarly anchor side-by-side HDR and SDR monitors around common reference white levels to avoid eye adaptation issues. This practice aligns closely with the compositing approach in ST 2094-50, which also centers on a common “reference white” luminance level.<br><br>
-Implementers are encouraged to review the system and provide feedback as soon as possible but no later than September 23, 2025, via GitHub to help improve the document and enhance interoperability across implementations.
+**Implementers are encouraged to review the system and provide feedback as soon as possible but no later than October 17, 2025, via GitHub, to help improve the document and enhance interoperability across implementations.**
 
 ## Reporting issues
 
