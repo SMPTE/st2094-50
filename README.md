@@ -45,7 +45,7 @@ provides a path toward interoperable, perceptually consistent HDR rendering in
 heterogeneous display environments. We look forward to your comments.
 
 **Implementers are encouraged to review the system and provide feedback as soon
-as possible but no later than March 11, 2026, via GitHub, to help improve the
+as possible but no later than March 16, 2026, via GitHub, to help improve the
 document and enhance interoperability across implementations.**
 
 ## Reporting issues
