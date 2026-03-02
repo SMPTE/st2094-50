@@ -17,7 +17,7 @@ Your feedback is welcome at <https://github.com/SMPTE/st2094-50/issues>.
 
 The second Public Committee Draft (PCD2) of ST 2094-50 is made available in
 10e-st-2094-50-cd-2026-02-23-draft.zip for a review period ending no later than
-2026-03-11.
+2026-03-16.
 
 To view the document, please download the
 [ZIP file](./10e-st-2094-50-cd-2026-02-23-draft.zip), extract the files, and
