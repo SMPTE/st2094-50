@@ -13,6 +13,8 @@ Please consult [CONTRIBUTING.md](./CONTRIBUTING.md),
 
 Your feedback is welcome at <https://github.com/SMPTE/st2094-50/issues>.
 
+<!-- PCD-INFO:START -->
+
 ## Second Public Committee Draft (PCD2) Notice
 
 The second Public Committee Draft (PCD2) of ST 2094-50 is made available in
@@ -47,6 +49,8 @@ heterogeneous display environments. We look forward to your comments.
 **Implementers are encouraged to review the system and provide feedback as soon
 as possible but no later than March 16, 2026, via GitHub, to help improve the
 document and enhance interoperability across implementations.**
+
+<!-- PCD-INFO:END -->
 
 ## Reporting issues
 
