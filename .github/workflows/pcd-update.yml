@@ -1,0 +1,122 @@
+name: PCD README update
+
+on:
+  repository_dispatch:
+    types: [pcd-published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag on the private repo, e.g. 20260319-cd"
+        required: true
+        type: string
+      private_repo:
+        description: "Private repo, e.g. SMPTE/tst123-4-private"
+        required: true
+        type: string
+      end_1:
+        description: "Review ends no earlier than (YYYY-MM-DD)"
+        required: true
+        type: string
+      end_2:
+        description: "Review ends no later than (YYYY-MM-DD)"
+        required: true
+        type: string
+      message:
+        description: "Details/marketing message (multi-line allowed)"
+        required: false
+        type: string
+        default: ""
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.fields.outputs.tag }}
+      release_url: ${{ steps.fields.outputs.release_url }}
+      doc_url: ${{ steps.fields.outputs.doc_url }}
+      private_repo: ${{ steps.fields.outputs.private_repo }}
+      private_repo_name: ${{ steps.fields.outputs.private_repo_name }}
+      public_repo: ${{ steps.fields.outputs.public_repo }}
+      public_repo_name: ${{ steps.fields.outputs.public_repo_name }}
+      end_1: ${{ steps.fields.outputs.end_1 }}
+      end_2: ${{ steps.fields.outputs.end_2 }}
+      message: ${{ steps.fields.outputs.message }}
+    steps:
+      - name: Derive fields
+        id: fields
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PAYLOAD_TAG: ${{ github.event.client_payload.tag }}
+          PAYLOAD_RELEASE_URL: ${{ github.event.client_payload.release_url }}
+          PAYLOAD_DOC_URL: ${{ github.event.client_payload.doc_url }}
+          PAYLOAD_PRIVATE_REPO: ${{ github.event.client_payload.private_repo }}
+          PAYLOAD_PUBLIC_REPO: ${{ github.event.client_payload.public_repo }}
+          PAYLOAD_END_1: ${{ github.event.client_payload.end_1 }}
+          PAYLOAD_END_2: ${{ github.event.client_payload.end_2 }}
+          PAYLOAD_MESSAGE: ${{ github.event.client_payload.message }}
+          INPUT_TAG: ${{ inputs.tag }}
+          INPUT_PRIVATE_REPO: ${{ inputs.private_repo }}
+          INPUT_END_1: ${{ inputs.end_1 }}
+          INPUT_END_2: ${{ inputs.end_2 }}
+          INPUT_MESSAGE: ${{ inputs.message }}
+          GITHUB_REPO: ${{ github.repository }}
+        run: |
+          if [[ "$EVENT_NAME" == "repository_dispatch" ]]; then
+            TAG="$PAYLOAD_TAG"
+            RELEASE_URL="$PAYLOAD_RELEASE_URL"
+            DOC_URL="$PAYLOAD_DOC_URL"
+            PRIVATE_REPO="$PAYLOAD_PRIVATE_REPO"
+            PUBLIC_REPO="$PAYLOAD_PUBLIC_REPO"
+            END_1="$PAYLOAD_END_1"
+            END_2="$PAYLOAD_END_2"
+            MESSAGE="$PAYLOAD_MESSAGE"
+          else
+            TAG="$INPUT_TAG"
+            PRIVATE_REPO="$INPUT_PRIVATE_REPO"
+            PUBLIC_REPO="$GITHUB_REPO"
+            RELEASE_URL="https://github.com/${PRIVATE_REPO}/releases/tag/${TAG}"
+            DOC_URL="https://doc.smpte-doc.org/${PRIVATE_REPO#*/}/${TAG}/"
+            END_1="$INPUT_END_1"
+            END_2="$INPUT_END_2"
+            MESSAGE="$INPUT_MESSAGE"
+          fi
+          PRIVATE_REPO_NAME="${PRIVATE_REPO#*/}"
+          PUBLIC_REPO_NAME="${PUBLIC_REPO#*/}"
+
+          {
+            echo "tag=$TAG"
+            echo "release_url=$RELEASE_URL"
+            echo "doc_url=$DOC_URL"
+            echo "private_repo=$PRIVATE_REPO"
+            echo "private_repo_name=$PRIVATE_REPO_NAME"
+            echo "public_repo=$PUBLIC_REPO"
+            echo "public_repo_name=$PUBLIC_REPO_NAME"
+            echo "end_1=$END_1"
+            echo "end_2=$END_2"
+          } >> "$GITHUB_OUTPUT"
+
+          # Multi-line message uses GITHUB_OUTPUT heredoc syntax
+          DELIMITER="EOF_$(date +%s)_$$"
+          {
+            echo "message<<${DELIMITER}"
+            printf '%s\n' "$MESSAGE"
+            echo "${DELIMITER}"
+          } >> "$GITHUB_OUTPUT"
+
+  update:
+    needs: resolve
+    permissions:
+      contents: write
+      pull-requests: write
+    uses: SMPTE/html-pub/.github/workflows/pcd-update-reusable.yml@main
+    with:
+      tag: ${{ needs.resolve.outputs.tag }}
+      release_url: ${{ needs.resolve.outputs.release_url }}
+      doc_url: ${{ needs.resolve.outputs.doc_url }}
+      private_repo: ${{ needs.resolve.outputs.private_repo }}
+      private_repo_name: ${{ needs.resolve.outputs.private_repo_name }}
+      public_repo: ${{ needs.resolve.outputs.public_repo }}
+      public_repo_name: ${{ needs.resolve.outputs.public_repo_name }}
+      end_1: ${{ needs.resolve.outputs.end_1 }}
+      end_2: ${{ needs.resolve.outputs.end_2 }}
+      message: ${{ needs.resolve.outputs.message }}
